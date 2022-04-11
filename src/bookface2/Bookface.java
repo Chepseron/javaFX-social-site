@@ -21,10 +21,10 @@ public class Bookface extends Application {
     TitledPane titledPane;
     AnchorPane mainAnchorPane;
     TextArea StatusTxtBox;
-    Label label;
+    Label StatusUpdatedLabel;
     Button UpdateStatusButton;
     Button EditProfileButton;
-    ImageView imageSpot;
+    ImageView ImageSpot;
     Button ImageEditButton;
     Label name;
     Label RegNum;
@@ -59,7 +59,7 @@ public class Bookface extends Application {
                 BufferedImage bufferedImage;
                 bufferedImage = ImageIO.read(new File(file.getAbsoluteFile().toString()));
                 Image image = SwingFXUtils.toFXImage(bufferedImage, null);
-                this.imageSpot.setImage(image);
+                this.ImageSpot.setImage(image);
 
             } catch (IOException ex) {
                 Logger.getLogger(Bookface.class.getName()).log(Level.SEVERE, null, ex);
@@ -97,10 +97,10 @@ public class Bookface extends Application {
         titledPane = new TitledPane();
         mainAnchorPane = new AnchorPane();
         StatusTxtBox = new TextArea();
-        label = new Label();
+        StatusUpdatedLabel = new Label();
         UpdateStatusButton = new Button();
         EditProfileButton = new Button();
-        imageSpot = new ImageView();
+        ImageSpot = new ImageView();
         ImageEditButton = new Button();
         name = new Label();
         RegNum = new Label();
@@ -132,9 +132,9 @@ public class Bookface extends Application {
         StatusTxtBox.setPrefHeight(36.0);
         StatusTxtBox.setPrefWidth(408.0);
 
-        label.setLayoutX(26.0);
-        label.setLayoutY(54.0);
-        label.setText("How do you feel?");
+        StatusUpdatedLabel.setLayoutX(26.0);
+        StatusUpdatedLabel.setLayoutY(54.0);
+        StatusUpdatedLabel.setText("How do you feel?");
 
         UpdateStatusButton.setId("UpdateStatusButton");
         UpdateStatusButton.setLayoutX(26.0);
@@ -152,13 +152,13 @@ public class Bookface extends Application {
         EditProfileButton.setText("Edit Profile");
         EditProfileButton.setTextFill(javafx.scene.paint.Color.valueOf("#fcf7f7"));
 
-        imageSpot.setFitHeight(212.0);
-        imageSpot.setFitWidth(200.0);
-        imageSpot.setLayoutX(584.0);
-        imageSpot.setLayoutY(19.0);
-        imageSpot.setPickOnBounds(true);
-        imageSpot.setPreserveRatio(true);
-//        imageSpot.setImage(new Image(getClass().getResource("../../../../../Desktop/dominic.jpg").toExternalForm()));
+        ImageSpot.setFitHeight(212.0);
+        ImageSpot.setFitWidth(200.0);
+        ImageSpot.setLayoutX(584.0);
+        ImageSpot.setLayoutY(19.0);
+        ImageSpot.setPickOnBounds(true);
+        ImageSpot.setPreserveRatio(true);
+//        ImageSpot.setImage(new Image(getClass().getResource("../../../../../Desktop/dominic.jpg").toExternalForm()));
 
         ImageEditButton.setId("ImageEditButton");
         ImageEditButton.setLayoutX(589.0);
@@ -243,10 +243,10 @@ public class Bookface extends Application {
         titledPane.setContent(mainAnchorPane);
 
         mainAnchorPane.getChildren().add(StatusTxtBox);
-        mainAnchorPane.getChildren().add(label);
+        mainAnchorPane.getChildren().add(StatusUpdatedLabel);
         mainAnchorPane.getChildren().add(UpdateStatusButton);
         mainAnchorPane.getChildren().add(EditProfileButton);
-        mainAnchorPane.getChildren().add(imageSpot);
+        mainAnchorPane.getChildren().add(ImageSpot);
         mainAnchorPane.getChildren().add(ImageEditButton);
         mainAnchorPane.getChildren().add(name);
         mainAnchorPane.getChildren().add(RegNum);
