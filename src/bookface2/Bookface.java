@@ -33,7 +33,7 @@ public class Bookface extends Application {
     Label Course;
     Label StatusLabel;
     TitledPane ProfileDetailsPane;
-    AnchorPane mainAnchorPane0;
+    AnchorPane mainAnchorPanePersonalDetails;
     TextField NameTxtField;
     TextField StudentNumberTxtField;
     TextField ProgrammeTxtField;
@@ -109,7 +109,7 @@ public class Bookface extends Application {
         Course = new Label();
         StatusLabel = new Label();
         ProfileDetailsPane = new TitledPane();
-        mainAnchorPane0 = new AnchorPane();
+        mainAnchorPanePersonalDetails = new AnchorPane();
         NameTxtField = new TextField();
         StudentNumberTxtField = new TextField();
         ProgrammeTxtField = new TextField();
@@ -197,11 +197,11 @@ public class Bookface extends Application {
         ProfileDetailsPane.setText("Please update your details");
         ProfileDetailsPane.setVisible(false);
 
-        mainAnchorPane0.setMinHeight(0.0);
-        mainAnchorPane0.setMinWidth(0.0);
-        mainAnchorPane0.setPrefHeight(231.0);
-        mainAnchorPane0.setPrefWidth(524.0);
-        mainAnchorPane0.setVisible(false);
+        mainAnchorPanePersonalDetails.setMinHeight(0.0);
+        mainAnchorPanePersonalDetails.setMinWidth(0.0);
+        mainAnchorPanePersonalDetails.setPrefHeight(231.0);
+        mainAnchorPanePersonalDetails.setPrefWidth(524.0);
+        mainAnchorPanePersonalDetails.setVisible(false);
 
         NameTxtField.setLayoutX(173.0);
         NameTxtField.setLayoutY(33.0);
@@ -241,7 +241,7 @@ public class Bookface extends Application {
         ProfileCancelButton.setMnemonicParsing(false);
         ProfileCancelButton.setOnAction(this::handleProfileCancelButton);
         ProfileCancelButton.setText("Cancel");
-        ProfileDetailsPane.setContent(mainAnchorPane0);
+        ProfileDetailsPane.setContent(mainAnchorPanePersonalDetails);
         titledPane.setContent(mainAnchorPane);
 
         mainAnchorPane.getChildren().add(StatusTxtBox);
@@ -254,14 +254,14 @@ public class Bookface extends Application {
         mainAnchorPane.getChildren().add(RegNum);
         mainAnchorPane.getChildren().add(Course);
         mainAnchorPane.getChildren().add(StatusLabel);
-        mainAnchorPane0.getChildren().add(NameTxtField);
-        mainAnchorPane0.getChildren().add(StudentNumberTxtField);
-        mainAnchorPane0.getChildren().add(ProgrammeTxtField);
-        mainAnchorPane0.getChildren().add(fullNamesLabel);
-        mainAnchorPane0.getChildren().add(studentNumberLabel);
-        mainAnchorPane0.getChildren().add(programmeLabel);
-        mainAnchorPane0.getChildren().add(ProfileUpdateButton);
-        mainAnchorPane0.getChildren().add(ProfileCancelButton);
+        mainAnchorPanePersonalDetails.getChildren().add(NameTxtField);
+        mainAnchorPanePersonalDetails.getChildren().add(StudentNumberTxtField);
+        mainAnchorPanePersonalDetails.getChildren().add(ProgrammeTxtField);
+        mainAnchorPanePersonalDetails.getChildren().add(fullNamesLabel);
+        mainAnchorPanePersonalDetails.getChildren().add(studentNumberLabel);
+        mainAnchorPanePersonalDetails.getChildren().add(programmeLabel);
+        mainAnchorPanePersonalDetails.getChildren().add(ProfileUpdateButton);
+        mainAnchorPanePersonalDetails.getChildren().add(ProfileCancelButton);
         mainAnchorPane.getChildren().add(ProfileDetailsPane);
         //mainAnchorPane.getChildren().add(titledPane);
         EditProfileButton.setOnAction(this::handleProfileButtonAction);
