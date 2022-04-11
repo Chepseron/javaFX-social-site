@@ -1,4 +1,4 @@
-package bookface2;
+package bookface;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -22,10 +22,10 @@ public class Bookface extends Application {
     AnchorPane mainAnchorPane;
     TextArea StatusTxtBox;
     Label label;
-    Button button;
+    Button UpdateStatusButton;
     Button EditProfileButton;
     ImageView imageSpot;
-    Button imageEditButton;
+    Button ImageEditButton;
     Label name;
     Label RegNum;
     Label Course;
@@ -46,8 +46,9 @@ public class Bookface extends Application {
         StatusLabel.setText(StatusTxtBox.getText());
     }
 
-    protected void handleProfileButtonAction(ActionEvent actionEvent) {
-        titledPane.setVisible(true);
+    public void handleProfileButtonAction(ActionEvent actionEvent) {
+        detailsPane.setVisible(true);
+        
     }
 
     protected void handleImageEditAction(ActionEvent actionEvent) {
@@ -73,7 +74,7 @@ public class Bookface extends Application {
     }
 
     protected void handleProfileCancelButton(ActionEvent actionEvent) {
-        titledPane.setVisible(false);
+        detailsPane.setVisible(false);
     }
 
     public Bookface() {
@@ -97,10 +98,10 @@ public class Bookface extends Application {
         mainAnchorPane = new AnchorPane();
         StatusTxtBox = new TextArea();
         label = new Label();
-        button = new Button();
+        UpdateStatusButton = new Button();
         EditProfileButton = new Button();
         imageSpot = new ImageView();
-        imageEditButton = new Button();
+        ImageEditButton = new Button();
         name = new Label();
         RegNum = new Label();
         Course = new Label();
@@ -135,19 +136,18 @@ public class Bookface extends Application {
         label.setLayoutY(54.0);
         label.setText("How do you feel?");
 
-        button.setId("UpdateStatusButton");
-        button.setLayoutX(26.0);
-        button.setLayoutY(134.0);
-        button.setMnemonicParsing(false);
-        button.setOnAction(this::handleStatusButtonAction);
-        button.setStyle("-fx-background-color: blue;");
-        button.setText("Update Status");
-        button.setTextFill(javafx.scene.paint.Color.valueOf("#eee7e7"));
+        UpdateStatusButton.setId("UpdateStatusButton");
+        UpdateStatusButton.setLayoutX(26.0);
+        UpdateStatusButton.setLayoutY(134.0);
+        UpdateStatusButton.setMnemonicParsing(false);
+        UpdateStatusButton.setOnAction(this::handleStatusButtonAction);
+        UpdateStatusButton.setStyle("-fx-background-color: blue;");
+        UpdateStatusButton.setText("Update Status");
+        UpdateStatusButton.setTextFill(javafx.scene.paint.Color.valueOf("#eee7e7"));
 
         EditProfileButton.setLayoutX(589.0);
         EditProfileButton.setLayoutY(506.0);
         EditProfileButton.setMnemonicParsing(false);
-        EditProfileButton.setOnAction(this::handleProfileButtonAction);
         EditProfileButton.setStyle("-fx-background-color: blue;");
         EditProfileButton.setText("Edit Profile");
         EditProfileButton.setTextFill(javafx.scene.paint.Color.valueOf("#fcf7f7"));
@@ -158,16 +158,16 @@ public class Bookface extends Application {
         imageSpot.setLayoutY(19.0);
         imageSpot.setPickOnBounds(true);
         imageSpot.setPreserveRatio(true);
-//        imageSpot.setImage(new Image(getClass().getResource("../../../../../Desktop/amon.jpg").toExternalForm()));
+//        imageSpot.setImage(new Image(getClass().getResource("../../../../../Desktop/dominic.jpg").toExternalForm()));
 
-        imageEditButton.setId("imageEditButton");
-        imageEditButton.setLayoutX(589.0);
-        imageEditButton.setLayoutY(267.0);
-        imageEditButton.setMnemonicParsing(false);
-        imageEditButton.setOnAction(this::handleImageEditAction);
-        imageEditButton.setStyle("-fx-background-color: blue;");
-        imageEditButton.setText("Change picture");
-        imageEditButton.setTextFill(javafx.scene.paint.Color.valueOf("#fcfcfc"));
+        ImageEditButton.setId("ImageEditButton");
+        ImageEditButton.setLayoutX(589.0);
+        ImageEditButton.setLayoutY(267.0);
+        ImageEditButton.setMnemonicParsing(false);
+        ImageEditButton.setOnAction(this::handleImageEditAction);
+        ImageEditButton.setStyle("-fx-background-color: blue;");
+        ImageEditButton.setText("Change picture");
+        ImageEditButton.setTextFill(javafx.scene.paint.Color.valueOf("#fcfcfc"));
 
         name.setLayoutX(581.0);
         name.setLayoutY(326.0);
@@ -244,10 +244,10 @@ public class Bookface extends Application {
 
         mainAnchorPane.getChildren().add(StatusTxtBox);
         mainAnchorPane.getChildren().add(label);
-        mainAnchorPane.getChildren().add(button);
+        mainAnchorPane.getChildren().add(UpdateStatusButton);
         mainAnchorPane.getChildren().add(EditProfileButton);
         mainAnchorPane.getChildren().add(imageSpot);
-        mainAnchorPane.getChildren().add(imageEditButton);
+        mainAnchorPane.getChildren().add(ImageEditButton);
         mainAnchorPane.getChildren().add(name);
         mainAnchorPane.getChildren().add(RegNum);
         mainAnchorPane.getChildren().add(Course);
@@ -261,6 +261,23 @@ public class Bookface extends Application {
         mainAnchorPane0.getChildren().add(ProfileUpdateButton);
         mainAnchorPane0.getChildren().add(ProfileCancelButton);
         mainAnchorPane.getChildren().add(detailsPane);
+        //mainAnchorPane.getChildren().add(titledPane);
+        
+        
+        
+        //Button to edit profile/update name, programme and registration number
+        EditProfileButton.setOnAction(this::handleProfileButtonAction); 
+        //button to update the profile picture
+        ImageEditButton.setOnAction(this::handleImageEditAction);
+        //button to show dialog to update the profile
+        ProfileUpdateButton.setOnAction(this::handleProfileUpdateButton);
+        //button to cancel the edit profile dialog
+        ProfileCancelButton.setOnAction(this::handleProfileCancelButton);
+        //button to update the status
+        UpdateStatusButton.setOnAction(this::handleStatusButtonAction);
+        
+        
+        
         root.getChildren().add(mainAnchorPane);
         primaryStage.show();
 
@@ -268,11 +285,7 @@ public class Bookface extends Application {
 
     @Override
     public void init() {
-        button.setOnAction(this::handleStatusButtonAction);
-        EditProfileButton.setOnAction(this::handleProfileButtonAction);
-        imageEditButton.setOnAction(this::handleImageEditAction);
-        ProfileUpdateButton.setOnAction(this::handleProfileUpdateButton);
-        ProfileCancelButton.setOnAction(this::handleProfileCancelButton);
+    
     }
 
 }
