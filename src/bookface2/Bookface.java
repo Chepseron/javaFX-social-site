@@ -16,28 +16,28 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
 
-public class FXMLDocumentBase extends Application {
+public class Bookface extends Application {
 
     TitledPane titledPane;
-    AnchorPane anchorPane;
+    AnchorPane mainAnchorPane;
     TextArea StatusTxtBox;
     Label label;
     Button button;
     Button EditProfileButton;
     ImageView imageSpot;
-    Button button0;
+    Button imageEditButton;
     Label name;
     Label RegNum;
     Label Course;
     Label StatusLabel;
-    TitledPane titledPane0;
-    AnchorPane anchorPane0;
+    TitledPane detailsPane;
+    AnchorPane mainAnchorPane0;
     TextField NameTxtField;
     TextField StudentNumberTxtField;
     TextField ProgrammeTxtField;
-    Label label0;
-    Label label1;
-    Label label2;
+    Label fullNamesLabel;
+    Label studentNumberLabel;
+    Label programmeLabel;
     Button ProfileUpdateButton;
     Button ProfileCancelButton;
 
@@ -55,17 +55,13 @@ public class FXMLDocumentBase extends Application {
         File file = fileChooser.showOpenDialog(null);
         if (file != null) {
             try {
-                // openFile(file);
-                // where my problem is
                 BufferedImage bufferedImage;
                 bufferedImage = ImageIO.read(new File(file.getAbsoluteFile().toString()));
                 Image image = SwingFXUtils.toFXImage(bufferedImage, null);
                 this.imageSpot.setImage(image);
-                //Image image1 = new Image(file.getCanonicalFile().toString().replaceAll('\','\\'));
-                // what I tried to do
 
             } catch (IOException ex) {
-                Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Bookface.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -80,7 +76,7 @@ public class FXMLDocumentBase extends Application {
         titledPane.setVisible(false);
     }
 
-    public FXMLDocumentBase() {
+    public Bookface() {
 
     }
 
@@ -88,7 +84,7 @@ public class FXMLDocumentBase extends Application {
         try {
             Application.launch(args);
         } catch (Exception ex) {
-            Logger.getLogger(FXMLDocumentBase.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Bookface.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -98,25 +94,25 @@ public class FXMLDocumentBase extends Application {
         StackPane root = new StackPane();
         primaryStage.setScene(new Scene(root, 900, 750));
         titledPane = new TitledPane();
-        anchorPane = new AnchorPane();
+        mainAnchorPane = new AnchorPane();
         StatusTxtBox = new TextArea();
         label = new Label();
         button = new Button();
         EditProfileButton = new Button();
         imageSpot = new ImageView();
-        button0 = new Button();
+        imageEditButton = new Button();
         name = new Label();
         RegNum = new Label();
         Course = new Label();
         StatusLabel = new Label();
-        titledPane0 = new TitledPane();
-        anchorPane0 = new AnchorPane();
+        detailsPane = new TitledPane();
+        mainAnchorPane0 = new AnchorPane();
         NameTxtField = new TextField();
         StudentNumberTxtField = new TextField();
         ProgrammeTxtField = new TextField();
-        label0 = new Label();
-        label1 = new Label();
-        label2 = new Label();
+        fullNamesLabel = new Label();
+        studentNumberLabel = new Label();
+        programmeLabel = new Label();
         ProfileUpdateButton = new Button();
         ProfileCancelButton = new Button();
 
@@ -125,10 +121,10 @@ public class FXMLDocumentBase extends Application {
         titledPane.setPrefWidth(834.0);
         titledPane.setText("BookFace - The new Social media platform ");
 
-        anchorPane.setMinHeight(0.0);
-        anchorPane.setMinWidth(0.0);
-        anchorPane.setPrefHeight(685.0);
-        anchorPane.setPrefWidth(606.0);
+        mainAnchorPane.setMinHeight(0.0);
+        mainAnchorPane.setMinWidth(0.0);
+        mainAnchorPane.setPrefHeight(685.0);
+        mainAnchorPane.setPrefWidth(606.0);
 
         StatusTxtBox.setLayoutX(26.0);
         StatusTxtBox.setLayoutY(83.0);
@@ -164,14 +160,14 @@ public class FXMLDocumentBase extends Application {
         imageSpot.setPreserveRatio(true);
 //        imageSpot.setImage(new Image(getClass().getResource("../../../../../Desktop/amon.jpg").toExternalForm()));
 
-        button0.setId("imageEditButton");
-        button0.setLayoutX(589.0);
-        button0.setLayoutY(267.0);
-        button0.setMnemonicParsing(false);
-        button0.setOnAction(this::handleImageEditAction);
-        button0.setStyle("-fx-background-color: blue;");
-        button0.setText("Change picture");
-        button0.setTextFill(javafx.scene.paint.Color.valueOf("#fcfcfc"));
+        imageEditButton.setId("imageEditButton");
+        imageEditButton.setLayoutX(589.0);
+        imageEditButton.setLayoutY(267.0);
+        imageEditButton.setMnemonicParsing(false);
+        imageEditButton.setOnAction(this::handleImageEditAction);
+        imageEditButton.setStyle("-fx-background-color: blue;");
+        imageEditButton.setText("Change picture");
+        imageEditButton.setTextFill(javafx.scene.paint.Color.valueOf("#fcfcfc"));
 
         name.setLayoutX(581.0);
         name.setLayoutY(326.0);
@@ -191,19 +187,19 @@ public class FXMLDocumentBase extends Application {
         StatusLabel.setLayoutY(531.0);
         StatusLabel.setText("Today i feel..");
 
-        titledPane0.setAnimated(false);
-        titledPane0.setLayoutX(87.0);
-        titledPane0.setLayoutY(223.0);
-        titledPane0.setPrefHeight(206.0);
-        titledPane0.setPrefWidth(526.0);
-        titledPane0.setText("Please update your details");
-        titledPane0.setVisible(false);
+        detailsPane.setAnimated(false);
+        detailsPane.setLayoutX(87.0);
+        detailsPane.setLayoutY(223.0);
+        detailsPane.setPrefHeight(206.0);
+        detailsPane.setPrefWidth(526.0);
+        detailsPane.setText("Please update your details");
+        detailsPane.setVisible(false);
 
-        anchorPane0.setMinHeight(0.0);
-        anchorPane0.setMinWidth(0.0);
-        anchorPane0.setPrefHeight(231.0);
-        anchorPane0.setPrefWidth(524.0);
-        anchorPane0.setVisible(false);
+        mainAnchorPane0.setMinHeight(0.0);
+        mainAnchorPane0.setMinWidth(0.0);
+        mainAnchorPane0.setPrefHeight(231.0);
+        mainAnchorPane0.setPrefWidth(524.0);
+        mainAnchorPane0.setVisible(false);
 
         NameTxtField.setLayoutX(173.0);
         NameTxtField.setLayoutY(33.0);
@@ -220,17 +216,17 @@ public class FXMLDocumentBase extends Application {
         ProgrammeTxtField.setPrefHeight(25.0);
         ProgrammeTxtField.setPrefWidth(271.0);
 
-        label0.setLayoutX(20.0);
-        label0.setLayoutY(46.0);
-        label0.setText("Full Names");
+        fullNamesLabel.setLayoutX(20.0);
+        fullNamesLabel.setLayoutY(46.0);
+        fullNamesLabel.setText("Full Names");
 
-        label1.setLayoutX(20.0);
-        label1.setLayoutY(82.0);
-        label1.setText("Student Number");
+        studentNumberLabel.setLayoutX(20.0);
+        studentNumberLabel.setLayoutY(82.0);
+        studentNumberLabel.setText("Student Number");
 
-        label2.setLayoutX(20.0);
-        label2.setLayoutY(134.0);
-        label2.setText("programme of study");
+        programmeLabel.setLayoutX(20.0);
+        programmeLabel.setLayoutY(134.0);
+        programmeLabel.setText("programme of study");
 
         ProfileUpdateButton.setLayoutX(318.0);
         ProfileUpdateButton.setLayoutY(154.0);
@@ -243,36 +239,40 @@ public class FXMLDocumentBase extends Application {
         ProfileCancelButton.setMnemonicParsing(false);
         ProfileCancelButton.setOnAction(this::handleProfileCancelButton);
         ProfileCancelButton.setText("Cancel");
-        titledPane0.setContent(anchorPane0);
-        titledPane.setContent(anchorPane);
+        detailsPane.setContent(mainAnchorPane0);
+        titledPane.setContent(mainAnchorPane);
 
-        anchorPane.getChildren().add(StatusTxtBox);
-        anchorPane.getChildren().add(label);
-        anchorPane.getChildren().add(button);
-        anchorPane.getChildren().add(EditProfileButton);
-        anchorPane.getChildren().add(imageSpot);
-        anchorPane.getChildren().add(button0);
-        anchorPane.getChildren().add(name);
-        anchorPane.getChildren().add(RegNum);
-        anchorPane.getChildren().add(Course);
-        anchorPane.getChildren().add(StatusLabel);
-        anchorPane0.getChildren().add(NameTxtField);
-        anchorPane0.getChildren().add(StudentNumberTxtField);
-        anchorPane0.getChildren().add(ProgrammeTxtField);
-        anchorPane0.getChildren().add(label0);
-        anchorPane0.getChildren().add(label1);
-        anchorPane0.getChildren().add(label2);
-        anchorPane0.getChildren().add(ProfileUpdateButton);
-        anchorPane0.getChildren().add(ProfileCancelButton);
-        anchorPane.getChildren().add(titledPane0);
-        root.getChildren().add(anchorPane);
+        mainAnchorPane.getChildren().add(StatusTxtBox);
+        mainAnchorPane.getChildren().add(label);
+        mainAnchorPane.getChildren().add(button);
+        mainAnchorPane.getChildren().add(EditProfileButton);
+        mainAnchorPane.getChildren().add(imageSpot);
+        mainAnchorPane.getChildren().add(imageEditButton);
+        mainAnchorPane.getChildren().add(name);
+        mainAnchorPane.getChildren().add(RegNum);
+        mainAnchorPane.getChildren().add(Course);
+        mainAnchorPane.getChildren().add(StatusLabel);
+        mainAnchorPane0.getChildren().add(NameTxtField);
+        mainAnchorPane0.getChildren().add(StudentNumberTxtField);
+        mainAnchorPane0.getChildren().add(ProgrammeTxtField);
+        mainAnchorPane0.getChildren().add(fullNamesLabel);
+        mainAnchorPane0.getChildren().add(studentNumberLabel);
+        mainAnchorPane0.getChildren().add(programmeLabel);
+        mainAnchorPane0.getChildren().add(ProfileUpdateButton);
+        mainAnchorPane0.getChildren().add(ProfileCancelButton);
+        mainAnchorPane.getChildren().add(detailsPane);
+        root.getChildren().add(mainAnchorPane);
         primaryStage.show();
 
     }
 
     @Override
     public void init() {
-
+        button.setOnAction(this::handleStatusButtonAction);
+        EditProfileButton.setOnAction(this::handleProfileButtonAction);
+        imageEditButton.setOnAction(this::handleImageEditAction);
+        ProfileUpdateButton.setOnAction(this::handleProfileUpdateButton);
+        ProfileCancelButton.setOnAction(this::handleProfileCancelButton);
     }
 
 }
