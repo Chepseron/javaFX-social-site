@@ -30,7 +30,7 @@ public class Bookface extends Application {
     Label RegNum;
     Label Course;
     Label StatusLabel;
-    TitledPane detailsPane;
+    TitledPane ProfileDetailsPane;
     AnchorPane mainAnchorPane0;
     TextField NameTxtField;
     TextField StudentNumberTxtField;
@@ -47,7 +47,7 @@ public class Bookface extends Application {
     }
 
     public void handleProfileButtonAction(ActionEvent actionEvent) {
-        detailsPane.setVisible(true);
+        ProfileDetailsPane.setVisible(true);
         
     }
 
@@ -74,7 +74,7 @@ public class Bookface extends Application {
     }
 
     protected void handleProfileCancelButton(ActionEvent actionEvent) {
-        detailsPane.setVisible(false);
+        ProfileDetailsPane.setVisible(false);
     }
 
     public Bookface() {
@@ -106,7 +106,7 @@ public class Bookface extends Application {
         RegNum = new Label();
         Course = new Label();
         StatusLabel = new Label();
-        detailsPane = new TitledPane();
+        ProfileDetailsPane = new TitledPane();
         mainAnchorPane0 = new AnchorPane();
         NameTxtField = new TextField();
         StudentNumberTxtField = new TextField();
@@ -187,13 +187,13 @@ public class Bookface extends Application {
         StatusLabel.setLayoutY(531.0);
         StatusLabel.setText("Today i feel..");
 
-        detailsPane.setAnimated(false);
-        detailsPane.setLayoutX(87.0);
-        detailsPane.setLayoutY(223.0);
-        detailsPane.setPrefHeight(206.0);
-        detailsPane.setPrefWidth(526.0);
-        detailsPane.setText("Please update your details");
-        detailsPane.setVisible(false);
+        ProfileDetailsPane.setAnimated(false);
+        ProfileDetailsPane.setLayoutX(87.0);
+        ProfileDetailsPane.setLayoutY(223.0);
+        ProfileDetailsPane.setPrefHeight(206.0);
+        ProfileDetailsPane.setPrefWidth(526.0);
+        ProfileDetailsPane.setText("Please update your details");
+        ProfileDetailsPane.setVisible(false);
 
         mainAnchorPane0.setMinHeight(0.0);
         mainAnchorPane0.setMinWidth(0.0);
@@ -239,7 +239,7 @@ public class Bookface extends Application {
         ProfileCancelButton.setMnemonicParsing(false);
         ProfileCancelButton.setOnAction(this::handleProfileCancelButton);
         ProfileCancelButton.setText("Cancel");
-        detailsPane.setContent(mainAnchorPane0);
+        ProfileDetailsPane.setContent(mainAnchorPane0);
         titledPane.setContent(mainAnchorPane);
 
         mainAnchorPane.getChildren().add(StatusTxtBox);
@@ -260,7 +260,7 @@ public class Bookface extends Application {
         mainAnchorPane0.getChildren().add(programmeLabel);
         mainAnchorPane0.getChildren().add(ProfileUpdateButton);
         mainAnchorPane0.getChildren().add(ProfileCancelButton);
-        mainAnchorPane.getChildren().add(detailsPane);
+        mainAnchorPane.getChildren().add(ProfileDetailsPane);
         //mainAnchorPane.getChildren().add(titledPane);
         
         
