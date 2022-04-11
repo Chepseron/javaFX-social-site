@@ -8,10 +8,12 @@ import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
@@ -48,7 +50,7 @@ public class Bookface extends Application {
 
     public void handleProfileButtonAction(ActionEvent actionEvent) {
         ProfileDetailsPane.setVisible(true);
-        
+
     }
 
     protected void handleImageEditAction(ActionEvent actionEvent) {
@@ -158,7 +160,7 @@ public class Bookface extends Application {
         ImageSpot.setLayoutY(19.0);
         ImageSpot.setPickOnBounds(true);
         ImageSpot.setPreserveRatio(true);
-//        ImageSpot.setImage(new Image(getClass().getResource("../../../../../Desktop/dominic.jpg").toExternalForm()));
+        // ImageSpot.setImage(new Image(getClass().getResource("C:/Users/asabul/Documents/NetBeansProjects/BookFace2/ph.jpg").toExternalForm()));
 
         ImageEditButton.setId("ImageEditButton");
         ImageEditButton.setLayoutX(589.0);
@@ -262,22 +264,7 @@ public class Bookface extends Application {
         mainAnchorPane0.getChildren().add(ProfileCancelButton);
         mainAnchorPane.getChildren().add(ProfileDetailsPane);
         //mainAnchorPane.getChildren().add(titledPane);
-        
-        
-        
-        //Button to edit profile/update name, programme and registration number
-        EditProfileButton.setOnAction(this::handleProfileButtonAction); 
-        //button to update the profile picture
-        ImageEditButton.setOnAction(this::handleImageEditAction);
-        //button to show dialog to update the profile
-        ProfileUpdateButton.setOnAction(this::handleProfileUpdateButton);
-        //button to cancel the edit profile dialog
-        ProfileCancelButton.setOnAction(this::handleProfileCancelButton);
-        //button to update the status
-        UpdateStatusButton.setOnAction(this::handleStatusButtonAction);
-        
-        
-        
+        EditProfileButton.setOnAction(this::handleProfileButtonAction);
         root.getChildren().add(mainAnchorPane);
         primaryStage.show();
 
@@ -285,7 +272,22 @@ public class Bookface extends Application {
 
     @Override
     public void init() {
-    
+        //Button to edit profile/update name, programme and registration number
+
+        try {
+
+            //button to update the profile picture
+            ImageEditButton.setOnAction(this::handleImageEditAction);
+            //button to show dialog to update the profile
+            ProfileUpdateButton.setOnAction(this::handleProfileUpdateButton);
+            //button to cancel the edit profile dialog
+            ProfileCancelButton.setOnAction(this::handleProfileCancelButton);
+            //button to update the status
+            UpdateStatusButton.setOnAction(this::handleStatusButtonAction);
+        } catch (Exception ex) {
+
+        }
+
     }
 
 }
