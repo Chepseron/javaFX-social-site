@@ -48,11 +48,6 @@ public class Bookface extends Application {
         StatusLabel.setText(StatusTxtBox.getText());
     }
 
-    public void handleProfileButtonAction(ActionEvent actionEvent) {
-        ProfileDetailsPane.setVisible(true);
-
-    }
-
     protected void handleImageEditAction(ActionEvent actionEvent) {
         final FileChooser fileChooser = new FileChooser();
         File file = fileChooser.showOpenDialog(null);
@@ -264,7 +259,7 @@ public class Bookface extends Application {
         mainAnchorPanePersonalDetails.getChildren().add(ProfileCancelButton);
         mainAnchorPane.getChildren().add(ProfileDetailsPane);
         //mainAnchorPane.getChildren().add(titledPane);
-        EditProfileButton.setOnAction(this::handleProfileButtonAction);
+        EditProfileButton.setOnAction((e) -> ProfileDetailsPane.setVisible(true));
         root.getChildren().add(mainAnchorPane);
         primaryStage.show();
 
@@ -272,10 +267,7 @@ public class Bookface extends Application {
 
     @Override
     public void init() {
-        //Button to edit profile/update name, programme and registration number
-
         try {
-
             //button to update the profile picture
             ImageEditButton.setOnAction(this::handleImageEditAction);
             //button to show dialog to update the profile
