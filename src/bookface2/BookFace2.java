@@ -6,23 +6,13 @@
 package bookface2;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 /**
@@ -44,7 +34,6 @@ public class BookFace2 extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
     /**

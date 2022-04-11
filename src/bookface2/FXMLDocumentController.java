@@ -34,7 +34,6 @@ public class FXMLDocumentController implements Initializable {
 
     private Label label;
 
-    @FXML
     Button UpdateStatusButton;
     @FXML
     TextArea StatusTxtBox;
@@ -59,6 +58,12 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     ImageView imageSpot;
+    @FXML
+    private Button EditProfileButton;
+    @FXML
+    private Button ProfileUpdateButton;
+    @FXML
+    private Button ProfileCancelButton;
 
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
