@@ -43,6 +43,7 @@ public class Bookface extends Application {
     Label programmeLabel;
     Button ProfileUpdateButton;
     Button ProfileCancelButton;
+    File file;
 
     public Bookface() {
         titledPane = new TitledPane();
@@ -77,11 +78,11 @@ public class Bookface extends Application {
 
     public void handleImageEditAction(ActionEvent actionEvent) {
         final FileChooser fileChooser = new FileChooser();
-        File file = fileChooser.showOpenDialog(null);
+        file = fileChooser.showOpenDialog(null);
         if (file != null) {
             try {
-                Image image = new Image(file.toURI().toString());
-                this.ImageSpot.setImage(image);
+
+                this.ImageSpot.setImage(new Image(file.toURI().toString()));
             } catch (Exception ex) {
                 Logger.getLogger(Bookface.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -152,9 +153,8 @@ public class Bookface extends Application {
         ImageSpot.setLayoutY(108.0);
         ImageSpot.setPickOnBounds(true);
         ImageSpot.setPreserveRatio(true);
-        File file = new File("C:/Users/asabul/Desktop/ph.png");
-        Image image = new Image(file.toURI().toString());
-        ImageSpot.setImage(image);
+       
+        ImageSpot.setImage(new Image(new File("C:/Users/asabul/Desktop/ph.png").toURI().toString()));
 
         ImageEditButton.setId("ImageEditButton");
         ImageEditButton.setLayoutX(578.0);
