@@ -162,7 +162,10 @@ public class Bookface extends Application {
         ImageSpot.setLayoutY(108.0);
         ImageSpot.setPickOnBounds(true);
         ImageSpot.setPreserveRatio(true);
-        //ImageSpot.setImage(new Image(getClass().getResource("C:/Users/asabul/Desktop/ph.png").toExternalForm()));
+
+        BufferedImage bufferedImage = ImageIO.read(new File("C:/Users/asabul/Desktop/ph.png"));
+        Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+        ImageSpot.setImage(image);
 
         ImageEditButton.setId("ImageEditButton");
         ImageEditButton.setLayoutX(578.0);
