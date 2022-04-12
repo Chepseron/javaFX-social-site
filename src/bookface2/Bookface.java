@@ -28,7 +28,7 @@ public class Bookface extends Application {
     Button UpdateStatusButton;
     Button EditProfileButton;
     ImageView ImageSpot;
-    public Button ImageEditButton;
+    Button ImageEditButton;
     Label NameLabel;
     Label RegNumLabel;
     Label CourseLabel;
@@ -155,7 +155,7 @@ public class Bookface extends Application {
         ImageSpot.setLayoutY(19.0);
         ImageSpot.setPickOnBounds(true);
         ImageSpot.setPreserveRatio(true);
-        // ImageSpot.setImage(new Image(getClass().getResource("C:/Users/asabul/Documents/NetBeansProjects/BookFace2/ph.jpg").toExternalForm()));
+        ImageSpot.setImage(null);
 
         ImageEditButton.setId("ImageEditButton");
         ImageEditButton.setLayoutX(589.0);
