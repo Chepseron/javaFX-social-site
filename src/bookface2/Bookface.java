@@ -256,7 +256,7 @@ public class Bookface extends Application {
         mainAnchorPanePersonalDetails.getChildren().add(ProfileUpdateButton);
         mainAnchorPanePersonalDetails.getChildren().add(ProfileCancelButton);
         mainAnchorPane.getChildren().add(ProfileDetailsPane);
-        EditProfileButton.setOnAction((e) -> ProfileDetailsPane.setVisible(true));
+
         root.getChildren().add(mainAnchorPane);
         primaryStage.show();
 
@@ -265,6 +265,7 @@ public class Bookface extends Application {
     @Override
     public void init() {
         try {
+            EditProfileButton.setOnAction((e) -> ProfileDetailsPane.setVisible(true));
             ImageEditButton.setOnAction(this::handleImageEditAction);
             //button to show dialog to update the profile
             ProfileUpdateButton.setOnAction(this::handleProfileUpdateButton);
