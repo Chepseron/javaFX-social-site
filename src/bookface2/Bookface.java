@@ -270,7 +270,7 @@ public class Bookface extends Application {
         RegNumTxtField.setText("12345678");
         //set the position of X and Y axis in the layout
         CourseTxtField.setLayoutX(173.0);
-        CourseTxtField.setLayoutY(130.0);
+        CourseTxtField.setLayoutY(123.0);
         //set the preffered height and width of the course text field
         CourseTxtField.setPrefHeight(25.0);
         CourseTxtField.setPrefWidth(271.0);
@@ -287,18 +287,18 @@ public class Bookface extends Application {
         RegNumMainPaneLabel.setText("Student Number");
         //set the position of X and Y axis in the layout
         CourseMainPaneLabel.setLayoutX(20.0);
-        CourseMainPaneLabel.setLayoutY(134.0);
+        CourseMainPaneLabel.setLayoutY(118.0);
         CourseMainPaneLabel.setText("Programme Of Study");
         //set the position of X and Y axis in the layout
         ProfileOkButton.setLayoutX(318.0);
-        ProfileOkButton.setLayoutY(154.0);
+        ProfileOkButton.setLayoutY(160.0);
         //set the preffered height and width
         ProfileOkButton.setPrefHeight(25.0);
         ProfileOkButton.setPrefWidth(125.0);
         ProfileOkButton.setText("OK");
         //set the position of X and Y axis in the layout
         ProfileCancelButton.setLayoutX(262.0);
-        ProfileCancelButton.setLayoutY(154.0);
+        ProfileCancelButton.setLayoutY(160.0);
         ProfileCancelButton.setText("Cancel");
 
         //add the profile anchor pane to the profile details pane
