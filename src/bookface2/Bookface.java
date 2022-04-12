@@ -225,12 +225,7 @@ public class Bookface extends Application {
         programmeLabel.setLayoutX(20.0);
         programmeLabel.setLayoutY(134.0);
         programmeLabel.setText("programme of study");
-
-//        
-//          <Button fx:id="ProfileUpdateButton" layoutX="318.0" layoutY="154.0" mnemonicParsing="false" onAction="#handleProfileUpdateButton" prefHeight="25.0" prefWidth="125.0" text="OK" />
-//                                        <Button fx:id="ProfileCancelButton" layoutX="262.0" layoutY="154.0" mnemonicParsing="false" onAction="#handleProfileCancelButton" text="Cancel" />
-//        
-//        
+    
         ProfileUpdateButton.setLayoutX(318.0);
         ProfileUpdateButton.setLayoutY(154.0);
         ProfileUpdateButton.setPrefHeight(25.0);
