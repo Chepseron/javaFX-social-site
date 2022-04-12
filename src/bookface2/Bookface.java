@@ -82,7 +82,6 @@ public class Bookface extends Application {
         StatusUpdatedLabel = new Label();
         UpdateStatusButton = new Button();
         EditProfileButton = new Button();
-
         ImageSpot = new ImageView();
         ImageEditButton = new Button();
         NameLabel = new Label();
@@ -139,7 +138,6 @@ public class Bookface extends Application {
         UpdateStatusButton.setLayoutX(26.0);
         UpdateStatusButton.setLayoutY(134.0);
         UpdateStatusButton.setMnemonicParsing(false);
-        //UpdateStatusButton.setOnAction(this::handleStatusButtonAction);
         UpdateStatusButton.setStyle("-fx-background-color: blue;");
         UpdateStatusButton.setText("Update Status");
         UpdateStatusButton.setTextFill(javafx.scene.paint.Color.valueOf("#eee7e7"));
@@ -163,7 +161,6 @@ public class Bookface extends Application {
         ImageEditButton.setLayoutX(589.0);
         ImageEditButton.setLayoutY(267.0);
         ImageEditButton.setMnemonicParsing(false);
-        //ImageEditButton.setOnAction(this::handleImageEditAction);
         ImageEditButton.setStyle("-fx-background-color: blue;");
         ImageEditButton.setText("Change picture");
         ImageEditButton.setTextFill(javafx.scene.paint.Color.valueOf("#fcfcfc"));
@@ -230,13 +227,11 @@ public class Bookface extends Application {
         ProfileUpdateButton.setLayoutX(318.0);
         ProfileUpdateButton.setLayoutY(154.0);
         ProfileUpdateButton.setMnemonicParsing(false);
-        //ProfileUpdateButton.setOnAction(this::handleProfileUpdateButton);
         ProfileUpdateButton.setText("OK");
 
         ProfileCancelButton.setLayoutX(210.0);
         ProfileCancelButton.setLayoutY(154.0);
         ProfileCancelButton.setMnemonicParsing(false);
-        //ProfileCancelButton.setOnAction(this::handleProfileCancelButton);
         ProfileCancelButton.setText("Cancel");
         ProfileDetailsPane.setContent(mainAnchorPanePersonalDetails);
         titledPane.setContent(mainAnchorPane);
@@ -261,7 +256,6 @@ public class Bookface extends Application {
         mainAnchorPanePersonalDetails.getChildren().add(ProfileUpdateButton);
         mainAnchorPanePersonalDetails.getChildren().add(ProfileCancelButton);
         mainAnchorPane.getChildren().add(ProfileDetailsPane);
-        //mainAnchorPane.getChildren().add(titledPane);
         EditProfileButton.setOnAction((e) -> ProfileDetailsPane.setVisible(true));
         root.getChildren().add(mainAnchorPane);
         primaryStage.show();
