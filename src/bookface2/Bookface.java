@@ -1,13 +1,10 @@
 package bookface;
 
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,14 +12,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.shape.Circle;
+import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javax.imageio.ImageIO;
 
 public class Bookface extends Application {
 
@@ -85,14 +80,9 @@ public class Bookface extends Application {
         File file = fileChooser.showOpenDialog(null);
         if (file != null) {
             try {
-                BufferedImage bufferedImage;
-
-                System.out.println(file.getAbsoluteFile().toString());
-                bufferedImage = ImageIO.read(new File(file.getAbsoluteFile().toString()));
-                Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+                Image image = new Image(file.toURI().toString());
                 this.ImageSpot.setImage(image);
-
-            } catch (IOException ex) {
+            } catch (Exception ex) {
                 Logger.getLogger(Bookface.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
@@ -162,9 +152,8 @@ public class Bookface extends Application {
         ImageSpot.setLayoutY(108.0);
         ImageSpot.setPickOnBounds(true);
         ImageSpot.setPreserveRatio(true);
-
-        BufferedImage bufferedImage = ImageIO.read(new File("C:/Users/asabul/Desktop/ph.png"));
-        Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+        File file = new File("C:/Users/asabul/Desktop/ph.png");
+        Image image = new Image(file.toURI().toString());
         ImageSpot.setImage(image);
 
         ImageEditButton.setId("ImageEditButton");
