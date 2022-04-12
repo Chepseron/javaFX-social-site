@@ -5,18 +5,19 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.application.Application;
 import javafx.embed.swing.SwingFXUtils;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import javax.imageio.ImageIO;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 public class Bookface extends Application {
 
@@ -27,10 +28,10 @@ public class Bookface extends Application {
     Button UpdateStatusButton;
     Button EditProfileButton;
     ImageView ImageSpot;
-    Button ImageEditButton;
-    Label name;
-    Label RegNum;
-    Label Course;
+    public Button ImageEditButton;
+    Label NameLabel;
+    Label RegNumLabel;
+    Label CourseLabel;
     Label StatusLabel;
     TitledPane ProfileDetailsPane;
     AnchorPane mainAnchorPanePersonalDetails;
@@ -65,9 +66,9 @@ public class Bookface extends Application {
     }
 
     protected void handleProfileUpdateButton(ActionEvent actionEvent) {
-        name.setText(NameTxtField.getText());
-        RegNum.setText(StudentNumberTxtField.getText());
-        Course.setText(ProgrammeTxtField.getText());
+        NameLabel.setText(NameTxtField.getText());
+        RegNumLabel.setText(StudentNumberTxtField.getText());
+        CourseLabel.setText(ProgrammeTxtField.getText());
     }
 
     protected void handleProfileCancelButton(ActionEvent actionEvent) {
@@ -80,7 +81,7 @@ public class Bookface extends Application {
 
     public static void main(String[] args) {
         try {
-            Application.launch(args);
+            launch(args);
         } catch (Exception ex) {
             Logger.getLogger(Bookface.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -91,17 +92,19 @@ public class Bookface extends Application {
         primaryStage.setTitle("BookFace - The new Social media platform ");
         StackPane root = new StackPane();
         primaryStage.setScene(new Scene(root, 900, 750));
+
         titledPane = new TitledPane();
         mainAnchorPane = new AnchorPane();
         StatusTxtBox = new TextArea();
         StatusUpdatedLabel = new Label();
         UpdateStatusButton = new Button();
         EditProfileButton = new Button();
+
         ImageSpot = new ImageView();
         ImageEditButton = new Button();
-        name = new Label();
-        RegNum = new Label();
-        Course = new Label();
+        NameLabel = new Label();
+        RegNumLabel = new Label();
+        CourseLabel = new Label();
         StatusLabel = new Label();
         ProfileDetailsPane = new TitledPane();
         mainAnchorPanePersonalDetails = new AnchorPane();
@@ -166,19 +169,19 @@ public class Bookface extends Application {
         ImageEditButton.setText("Change picture");
         ImageEditButton.setTextFill(javafx.scene.paint.Color.valueOf("#fcfcfc"));
 
-        name.setLayoutX(581.0);
-        name.setLayoutY(326.0);
-        name.setText("Dominic Ng'ethe Maina");
+        NameLabel.setLayoutX(581.0);
+        NameLabel.setLayoutY(326.0);
+        NameLabel.setText("Dominic Ng'ethe Maina");
 
-        RegNum.setLayoutX(582.0);
-        RegNum.setLayoutY(368.0);
-        RegNum.setText("HDC_MSCC 3079360");
+        RegNumLabel.setLayoutX(582.0);
+        RegNumLabel.setLayoutY(368.0);
+        RegNumLabel.setText("HDC_MSCC 3079360");
 
-        Course.setLayoutX(582.0);
-        Course.setLayoutY(385.0);
-        Course.setPrefHeight(51.0);
-        Course.setPrefWidth(220.0);
-        Course.setText("Computing Science");
+        CourseLabel.setLayoutX(582.0);
+        CourseLabel.setLayoutY(385.0);
+        CourseLabel.setPrefHeight(51.0);
+        CourseLabel.setPrefWidth(220.0);
+        CourseLabel.setText("Computing Science");
 
         StatusLabel.setLayoutX(26.0);
         StatusLabel.setLayoutY(531.0);
@@ -245,10 +248,11 @@ public class Bookface extends Application {
         mainAnchorPane.getChildren().add(EditProfileButton);
         mainAnchorPane.getChildren().add(ImageSpot);
         mainAnchorPane.getChildren().add(ImageEditButton);
-        mainAnchorPane.getChildren().add(name);
-        mainAnchorPane.getChildren().add(RegNum);
-        mainAnchorPane.getChildren().add(Course);
+        mainAnchorPane.getChildren().add(NameLabel);
+        mainAnchorPane.getChildren().add(RegNumLabel);
+        mainAnchorPane.getChildren().add(CourseLabel);
         mainAnchorPane.getChildren().add(StatusLabel);
+
         mainAnchorPanePersonalDetails.getChildren().add(NameTxtField);
         mainAnchorPanePersonalDetails.getChildren().add(StudentNumberTxtField);
         mainAnchorPanePersonalDetails.getChildren().add(ProgrammeTxtField);
@@ -268,7 +272,6 @@ public class Bookface extends Application {
     @Override
     public void init() {
         try {
-            //button to update the profile picture
             ImageEditButton.setOnAction(this::handleImageEditAction);
             //button to show dialog to update the profile
             ProfileUpdateButton.setOnAction(this::handleProfileUpdateButton);
@@ -277,9 +280,7 @@ public class Bookface extends Application {
             //button to update the status
             UpdateStatusButton.setOnAction(this::handleStatusButtonAction);
         } catch (Exception ex) {
-
         }
-
     }
 
 }
