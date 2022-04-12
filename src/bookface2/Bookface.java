@@ -76,23 +76,6 @@ public class Bookface extends Application {
     }
 
     public Bookface() {
-
-    }
-
-    public static void main(String[] args) {
-        try {
-            launch(args);
-        } catch (Exception ex) {
-            Logger.getLogger(Bookface.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("BookFace - The new Social media platform ");
-        StackPane root = new StackPane();
-        primaryStage.setScene(new Scene(root, 900, 750));
-
         titledPane = new TitledPane();
         mainAnchorPane = new AnchorPane();
         StatusTxtBox = new TextArea();
@@ -117,6 +100,22 @@ public class Bookface extends Application {
         ProfileUpdateButton = new Button();
         ProfileCancelButton = new Button();
 
+    }
+
+    public static void main(String[] args) {
+        try {
+            launch(args);
+        } catch (Exception ex) {
+            Logger.getLogger(Bookface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("BookFace - The new Social media platform ");
+        StackPane root = new StackPane();
+        primaryStage.setScene(new Scene(root, 900, 750));
+
         titledPane.setAnimated(false);
         titledPane.setPrefHeight(711.0);
         titledPane.setPrefWidth(834.0);
@@ -140,7 +139,7 @@ public class Bookface extends Application {
         UpdateStatusButton.setLayoutX(26.0);
         UpdateStatusButton.setLayoutY(134.0);
         UpdateStatusButton.setMnemonicParsing(false);
-        UpdateStatusButton.setOnAction(this::handleStatusButtonAction);
+        //UpdateStatusButton.setOnAction(this::handleStatusButtonAction);
         UpdateStatusButton.setStyle("-fx-background-color: blue;");
         UpdateStatusButton.setText("Update Status");
         UpdateStatusButton.setTextFill(javafx.scene.paint.Color.valueOf("#eee7e7"));
@@ -164,7 +163,7 @@ public class Bookface extends Application {
         ImageEditButton.setLayoutX(589.0);
         ImageEditButton.setLayoutY(267.0);
         ImageEditButton.setMnemonicParsing(false);
-        ImageEditButton.setOnAction(this::handleImageEditAction);
+        //ImageEditButton.setOnAction(this::handleImageEditAction);
         ImageEditButton.setStyle("-fx-background-color: blue;");
         ImageEditButton.setText("Change picture");
         ImageEditButton.setTextFill(javafx.scene.paint.Color.valueOf("#fcfcfc"));
@@ -231,13 +230,13 @@ public class Bookface extends Application {
         ProfileUpdateButton.setLayoutX(318.0);
         ProfileUpdateButton.setLayoutY(154.0);
         ProfileUpdateButton.setMnemonicParsing(false);
-        ProfileUpdateButton.setOnAction(this::handleProfileUpdateButton);
+        //ProfileUpdateButton.setOnAction(this::handleProfileUpdateButton);
         ProfileUpdateButton.setText("OK");
 
         ProfileCancelButton.setLayoutX(210.0);
         ProfileCancelButton.setLayoutY(154.0);
         ProfileCancelButton.setMnemonicParsing(false);
-        ProfileCancelButton.setOnAction(this::handleProfileCancelButton);
+        //ProfileCancelButton.setOnAction(this::handleProfileCancelButton);
         ProfileCancelButton.setText("Cancel");
         ProfileDetailsPane.setContent(mainAnchorPanePersonalDetails);
         titledPane.setContent(mainAnchorPane);
