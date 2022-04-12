@@ -204,7 +204,6 @@ public class Bookface extends Application {
         ImageHolder.setPreserveRatio(true);
         //set the default place holder image of the image holder
         ImageHolder.setImage(new Image(new File("C:\\Users\\asabul\\Desktop\\ph.png").toURI().toString()));
-
         ChangeImageButton.setId("ImageEditButton");
         //set the position of X and Y axis in the layout
         ChangeImageButton.setLayoutX(578.0);
@@ -248,7 +247,6 @@ public class Bookface extends Application {
         ProfileDetailsPane.setText("Please update your details");
         //set the profile display to not display on application launch 
         ProfileDetailsPane.setVisible(false);
-
         //set height and width of the profile anchor pane
         ProfileAnchorPane.setPrefHeight(231.0);
         ProfileAnchorPane.setPrefWidth(524.0);
