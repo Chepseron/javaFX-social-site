@@ -17,6 +17,7 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
@@ -46,12 +47,12 @@ public class Bookface extends Application {
     Button ProfileUpdateButton;
     Button ProfileCancelButton;
 
-    protected void handleStatusButtonAction(ActionEvent actionEvent) {
+    public void handleStatusButtonAction(ActionEvent actionEvent) {
         StatusTxtBox.getText();
         StatusLabel.setText(StatusTxtBox.getText());
     }
 
-    protected void handleImageEditAction(ActionEvent actionEvent) {
+    public void handleImageEditAction(ActionEvent actionEvent) {
         final FileChooser fileChooser = new FileChooser();
         File file = fileChooser.showOpenDialog(null);
         if (file != null) {
@@ -67,13 +68,13 @@ public class Bookface extends Application {
         }
     }
 
-    protected void handleProfileUpdateButton(ActionEvent actionEvent) {
+    public void handleProfileUpdateButton(ActionEvent actionEvent) {
         NameLabel.setText(NameTxtField.getText());
         RegNumLabel.setText(StudentNumberTxtField.getText());
         CourseLabel.setText(ProgrammeTxtField.getText());
     }
 
-    protected void handleProfileCancelButton(ActionEvent actionEvent) {
+    public void handleProfileCancelButton(ActionEvent actionEvent) {
         ProfileDetailsPane.setVisible(false);
     }
 
